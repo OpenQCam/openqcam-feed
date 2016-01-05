@@ -27,7 +27,7 @@ define Package/$(PKG_NAME)_util
   CATEGORY:=QIC1832 SDK
   TITLE:=Utility of SDK for QIC1832 encoding camera.
   URL:=
-  DEPENDS:= +$(PKG_NAME)
+  DEPENDS:=+$(PKG_NAME) +librt
 endef
 
 define Build/Configure
@@ -50,5 +50,5 @@ define Package/$(PKG_NAME)_util/install
 endef
 
 
-$(eval $(call BuildPackage,$(PKG_NAME),+lrt))
+$(eval $(call BuildPackage,$(PKG_NAME)))
 $(eval $(call BuildPackage,$(PKG_NAME)_util))
