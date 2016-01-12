@@ -23,51 +23,9 @@ define Package/$(PKG_NAME)
   DEPENDS:= \
   	+qic1832_sdk \
 	+libstdcpp \
-	+@CONFIG_LIBCURL_COOKIES \
-	+@CONFIG_LIBCURL_FILE \
-	+@CONFIG_LIBCURL_FTP \
-	+@CONFIG_LIBCURL_HTTP \
-	+@CONFIG_LIBCURL_NO_SMB \
-	+@CONFIG_LIBCURL_POLARSSL \
-	+@CONFIG_LIBCURL_PROXY \
-	+@CONFIG_OPENSSL_WITH_EC \
-	+alsa-lib \
-	+iperf \
-	+kmod-input-core \
-	+kmod-sound-core \
-	+kmod-usb-audio \
-	+kmod-usb-uhci \
-	+kmod-video-core \
-	+kmod-video-uvc \
-	+kmod-video-videobuf2 \
-	+libcurl \
-	+libiwinfo-lua \
-	+liblua \
 	+libopenssl \
-	+libpolarssl \
 	+libpthread \
-	+libreadline \
-	+librt \
-	+libubus-lua \
-	+libuci-lua \
-	+libustream-polarssl \
-	+lua \
-	+luci \
-	+luci-app-firewall \
-	+luci-base \
-	+luci-lib-ip \
-	+luci-lib-nixio \
-	+luci-mod-admin-full \
-	+luci-proto-ipv6 \
-	+luci-proto-ppp \
-	+luci-ssl \
-	+luci-theme-bootstrap \
-	+px5g \
-	+rpcd \
-	+uclibcxx \
-	+uhttpd \
-	+uhttpd-mod-ubus \
-	+zlib
+	+librt
   	
 endef
 
