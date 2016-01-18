@@ -19,6 +19,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/$(PKG_NAME)
   CATEGORY:=QIC1832 SDK
   TITLE:=Streaming QIC1832 camera video to client over RTSP/RTMP.
+  DEFAULT:=y
   URL:=
   DEPENDS:= \
   	+qic1832_sdk \

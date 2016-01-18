@@ -18,6 +18,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/$(PKG_NAME)
   CATEGORY:=QIC1832 SDK
   TITLE:=SDK for QIC1832 encoding camera.
+  DEFAULT:=y
   URL:=
   DEPENDS:=\
 	+kmod-video-core \
@@ -28,6 +29,7 @@ endef
 define Package/$(PKG_NAME)_util
   CATEGORY:=QIC1832 SDK
   TITLE:=Utility of SDK for QIC1832 encoding camera.
+  DEFAULT:=y
   URL:=
   DEPENDS:=+$(PKG_NAME) +librt
 endef
