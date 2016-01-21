@@ -114,7 +114,7 @@ qic1832_sdk_util contains the sample code for how to use QIC1832 encoding camera
 	$ avc_simulcast
 	$ vp8_simulcast
 
-openqcam
+qcam
 
 	Broadcast video stream.
 	$ qcam /etc/qcam/streamer.lua
