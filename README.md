@@ -48,10 +48,8 @@ tftp is used to download firmwares to device over ethernet.
 
 	$ git clone https://github.com/OpenQCam/openwrt-ij3x
 	$ cd openwrt-ij3x
-	Edit feeds.conf
-		src-git packages https://github.com/openwrt/packages.git;for-15.05
-		src-git luci https://github.com/openwrt/luci.git;for-15.05
-		src-git openqcam https://github.com/OpenQCam/openqcam-feed-ij3b.git
+	$ cp feeds.conf.default feeds.conf
+	$ echo src-git openqcam https://github.com/OpenQCam/openqcam-feed-ij3b.git >> feeds.conf
 	$ ./scripts/feeds update -a
 	$ ./scripts/feeds install -a
 	$ make menuconfig
