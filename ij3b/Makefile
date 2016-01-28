@@ -64,12 +64,15 @@ define Build/Prepare
 endef
 
 define Build/Compile
+	$(TARGET_CC) $(TARGET_CFLAGS) -o $(PKG_BUILD_DIR)/prodtest.cgi prodtest.c
 endef
 
 define Package/$(PKG_NAME)/install
 	if [ -d "./files" ]; then \
 		$(CP) ./files/* $(1); \
 	fi
+	$(INSTALL_DIR) $(1)/www/cgi-bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/prodtest.cgi $(1)/www/cgi-bin/
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
