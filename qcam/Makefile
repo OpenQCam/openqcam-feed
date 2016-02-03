@@ -43,6 +43,29 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_CONF) $(PKG_BUILD_DIR)/trunk/builders/cmake/applications/qicstreamer/server.key $(1)/etc/qcam/server.key
 	$(INSTALL_CONF) $(PKG_BUILD_DIR)/trunk/builders/cmake/applications/qicstreamer/server.crt $(1)/etc/qcam/server.crt
 	$(INSTALL_CONF) $(PKG_BUILD_DIR)/trunk/builders/cmake/nvram_test.xml $(1)/etc/qcam/nvram_test.xml
+
+	$(INSTALL_DIR) $(1)/etc/init.d
+	$(INSTALL_BIN) files/qcam $(1)/etc/init.d/qcam
+endef
+
+define Package/$(PKG_NAME)/postinst
+#!/bin/sh
+# check if we are on real system
+if [ -z "$${IPKG_INSTROOT}" ]; then
+        echo "Enabling rc.d symlink for qcam"
+        /etc/init.d/qcam enable
+fi
+exit 0
+endef
+
+define Package/$(PKG_NAME)/prerm
+#!/bin/sh
+# check if we are on real system
+if [ -z "$${IPKG_INSTROOT}" ]; then
+        echo "Removing rc.d symlink for qcam"
+        /etc/init.d/qcam disable
+fi
+exit 0
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
